@@ -178,7 +178,7 @@ module Phonelib
 
     # @private extracts extension from passed phone number if provided
     def separate_extension(original)
-      return [original, ''] unless Phonelib.extension_separate_symbols
+      return [original, +''] unless Phonelib.extension_separate_symbols
 
       regex = if Phonelib.extension_separate_symbols.is_a?(Array)
                 cr("#{Phonelib.extension_separate_symbols.join('|')}")
@@ -186,7 +186,7 @@ module Phonelib
                 cr("[#{Phonelib.extension_separate_symbols}]")
               end
       split = (original || '').split regex
-      [split.first || '', split[1..-1] && split[1..-1].join || '']
+      [split.first || '', split[1..-1] && split[1..-1].join || +'']
     end
 
     # @private get main country for code among provided countries
