@@ -3,8 +3,8 @@ require 'phonelib'
 # deprecated code climate
 #require 'codeclimate-test-reporter'
 #CodeClimate::TestReporter.start
-require 'simplecov'
-SimpleCov.start
+# require 'simplecov'
+# SimpleCov.start
 
 describe Phonelib do
   before(:all) do
